@@ -1,10 +1,18 @@
+/*
+ * @author Taylor Bazouzi 100579090
+ * @date   November 11, 2020
+ * @description
+ */
 package ca.durhamcollege;
 import java.util.Scanner;
 
 public class Main
 {
-    public static int NUM_OF_STRINGS = 5;
-
+    /**
+     * This method gets a string from the console
+     * @param prompt a friendly message to user
+     * @return the value from the console
+     */
     public static String getConsoleInput(String prompt)
     {
         Scanner console = new Scanner(System.in);
@@ -13,17 +21,34 @@ public class Main
     }
 
     /**
+     * Prints the log to the console
+     * @param log string array of input lines
+     */
+
+    public static void printLog(String[] log)
+    {
+        for (var line:log)
+        {
+            System.out.println(line);
+
+        }
+
+    }
+
+    /**
      * Entry point for application
-     * @param args
+     * @param args default argument
      */
 
     public static void main(String[] args)
     {
-        String[] log = new String[5];
+        String[] log = new String[Config.NUM_OF_STRINGS];
 
-        for (int i = 0; i < NUM_OF_STRINGS; i++)
+        for (int i = 0; i < Config.NUM_OF_STRINGS; i++)
         {
+            log[i] = getConsoleInput("enter your info: ");
 
         }
+        printLog(log);
     }
 }
