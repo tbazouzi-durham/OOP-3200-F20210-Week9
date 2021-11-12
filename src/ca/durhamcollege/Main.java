@@ -1,7 +1,7 @@
-/*
+/**
  * @author Taylor Bazouzi 100579090
  * @date   November 11, 2020
- * @description
+ *
  */
 package ca.durhamcollege;
 import java.util.Scanner;
@@ -13,11 +13,11 @@ public class Main
      * @param prompt a friendly message to user
      * @return the value from the console
      */
-    public static String getConsoleInput(String prompt)
+    public static <T> T getConsoleInput(String prompt)
     {
         Scanner console = new Scanner(System.in);
         System.out.print(prompt);
-        return console.nextLine();
+        return (T) console.nextLine();
     }
 
     /**
